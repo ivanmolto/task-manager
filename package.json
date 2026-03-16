@@ -1,0 +1,26 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SaaS-style Task Manager with microservices architecture",
+  "scripts": {
+    "install:all": "pnpm -r install",
+    "dev": "docker-compose up -d postgres redis && concurrently \"pnpm --filter auth-service dev\" \"pnpm --filter task-service dev\" \"pnpm --filter api-gateway dev\" \"pnpm --filter task-manager-frontend dev\"",
+    "build": "pnpm -r build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:build": "docker-compose build",
+    "db:migrate": "pnpm --filter auth-service prisma:migrate && pnpm --filter task-service prisma:migrate",
+    "db:generate": "pnpm --filter auth-service prisma:generate && pnpm --filter task-service prisma:generate",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
