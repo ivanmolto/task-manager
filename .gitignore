@@ -9,6 +9,9 @@ build/
 .next/
 out/
 
+# Prisma Generated Clients
+**/prisma/generated/
+
 # Environment files
 .env
 .env.local

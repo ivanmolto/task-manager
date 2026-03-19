@@ -28,5 +28,5 @@ COPY --chown=nestjs:nodejs docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
 USER nestjs
-EXPOSE 4001
+EXPOSE 4002
 ENTRYPOINT ["./docker-entrypoint.sh"]
