@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-echo "Running database migrations..."
+echo "🔐 [Auth Service] Running database migrations..."
 npx prisma migrate deploy
 
-echo "Starting Auth Service..."
+echo "🟢 [Auth Service] Starting application..."
 exec node dist/main.js
