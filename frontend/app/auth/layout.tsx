@@ -65,7 +65,9 @@ export default function AuthLayout({
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-2 mb-8 justify-center">
             <CheckSquare className="h-8 w-8 text-indigo-600" />
-            <span className="text-xl font-bold text-slate-800">TaskFlow</span>
+            <span className="text-xl font-bold text-slate-800">
+              TaskManager
+            </span>
           </div>
 
           {children}
